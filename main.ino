@@ -10,16 +10,20 @@ int xpos;
 int leftDist;
 int rightDist;
 int topDist;
+String fin;
 int bottomDist;
 int ypos;
 void setup() {
   
   Serial.begin(9600);
+  fin = "";
 
     
 }
 
 void loop() {
+  
+  fin = "";
   
 
   //casdicsdijcwe8fjqwe8saiduqwddsajcsaedsasudfasudntidsqtndsnantas//psadc8dsck8fdakjdsgasjntdsan
@@ -32,10 +36,10 @@ void loop() {
   
   if (leftDist < 20 || rightDist < 20) {
     if (leftDist < rightDist) {
-      Serial.println("A");
+      fin += "A";
     }
     else {
-      Serial.println("D");
+      fin += "D";
     }
   }
   
@@ -45,18 +49,14 @@ void loop() {
   
   if (topDist < 20 || bottomDist < 20) {
     if (topDist < bottomDist) {
-      Serial.println("W");
+      fin += "W";
     }
     else {
-      Serial.println("S");
+      fin += "S";
     }
   }
     
-   Serial.print("The X and Y coordinate is:");
-    Serial.print(sensorVal, DEC);
-    Serial.print(",");
-    Serial.println(sensorVal2, DEC);
-    Serial.println(" ");
+  Serial.println(fin);
     
 
   
