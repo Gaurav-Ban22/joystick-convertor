@@ -9,6 +9,8 @@ int xpos;
 
 int leftDist;
 int rightDist;
+int topDist;
+int bottomDist;
 int ypos;
 void setup() {
   
@@ -34,6 +36,19 @@ void loop() {
     }
     else {
       Serial.println("D");
+    }
+  }
+  
+  
+  topDist = abs(768 - sensorVal2);
+  bottomDist = abs(256-sensorVal2);
+  
+  if (topDist < 20 || bottomDist < 20) {
+    if (topDist < bottomDist) {
+      Serial.println("W");
+    }
+    else {
+      Serial.println("S");
     }
   }
     
